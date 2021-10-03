@@ -32,6 +32,9 @@ func main() {
 	case 5:
 		//Ciclo FOR
 		ciclos()
+	case 6:
+		//Condicionales
+		condicional()
 	}
 
 }
@@ -205,4 +208,22 @@ func aritmetica() {
 	radioCirculo := diametroCirculo / 2
 	areaCirculo := pi * float64(radioCirculo*radioCirculo)
 	fmt.Println("Área de círculo: ", areaCirculo)
+}
+
+func condicional() {
+	valor1 := 1
+
+	if valor1 == 1 {
+		fmt.Println("Es 1")
+	} else {
+		fmt.Println("No es 1")
+	}
+
+	//Con and
+	valor2 := 2
+	if valor1 == 1 && valor2 == 2 {
+		fmt.Println("El valor1 es 1 y el valor2 es 2")
+	} else {
+		fmt.Println("Uno de los valores no es igual.")
+	}
 }
