@@ -226,4 +226,16 @@ func condicional() {
 	} else {
 		fmt.Println("Uno de los valores no es igual.")
 	}
+
+	//Si es par o no
+	if valor1%2 == 0 {
+		fmt.Println("Valor1 es par")
+	} else {
+		fmt.Println("Valor1 no es par")
+	}
+	if valor2%2 == 0 {
+		fmt.Println("Valor2 es par")
+	} else {
+		fmt.Println("Valor2 no es par")
+	}
 }
