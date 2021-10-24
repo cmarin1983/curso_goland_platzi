@@ -12,6 +12,9 @@ func main() {
 	fmt.Println("4: Funciones")
 	fmt.Println("5: Ciclo FOR")
 	fmt.Println("6: Condicionales")
+	fmt.Println("7: Keywords")
+	fmt.Println("8: Arreglos")
+	fmt.Println("9: Recorrer arreglo")
 	fmt.Print("Opción: ")
 	var n int
 	fmt.Scanln(&n)
@@ -35,8 +38,74 @@ func main() {
 	case 6:
 		//Condicionales
 		condicional()
+	case 7:
+		//Palabras clave
+		keywords()
+	case 8:
+		//Arreglos
+		arreglos()
+	case 9:
+		//range
+		sliceRange()
 	}
 
+}
+
+func sliceRange() {
+	slice := []string{"hola", "que", "hace"}
+	fmt.Println(slice)
+	for i, valor := range slice {
+		fmt.Println(i, valor)
+	}
+}
+
+func arreglos() {
+	//Array
+	var array [4]int
+	array[0] = 1
+	array[1] = 2
+	fmt.Println(array)
+	fmt.Println(len(array), cap(array))
+
+	//Slides
+	slice := []int{1, 2, 3, 4, 5, 6, 7}
+	fmt.Println(slice, len(slice), cap(slice))
+	fmt.Println(slice[3])
+	fmt.Println(slice[:3])
+	fmt.Println(slice[3:5])
+	fmt.Println(slice[4:])
+
+	//Append
+	slice = append(slice, 8)
+	fmt.Println(slice)
+
+	//Append nueva lista
+	newSlice := []int{9, 10, 11}
+	slice = append(slice, newSlice...)
+	fmt.Println(slice)
+}
+
+func keywords() {
+	defer fmt.Println("Hola")
+	fmt.Println("Mundo")
+
+	//Continue y break
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+
+		//Continue
+		if i == 2 {
+			fmt.Println("Es 2")
+			continue
+		}
+
+		//break
+		if i == 8 {
+			fmt.Println("break")
+			break
+		}
+
+	}
 }
 
 func ciclos() {
