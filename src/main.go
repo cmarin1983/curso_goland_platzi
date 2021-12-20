@@ -19,6 +19,7 @@ func main() {
 	fmt.Println("8: Arreglos")
 	fmt.Println("9: Recorrer arreglo")
 	fmt.Println("10: Llave valor")
+	fmt.Println("11: Como son las clases en GO => Structs")
 	fmt.Print("Opción: ")
 	var n int
 	fmt.Scanln(&n)
@@ -53,8 +54,26 @@ func main() {
 		sliceRange()
 	case 10:
 		llaveValor()
+	case 11:
+		//Aca se llaman structs
+		clases()
 	}
 
+}
+
+type car struct {
+	brand string
+	year  int
+}
+
+func clases() {
+	myCar := car{brand: "Toyota", year: 2021}
+	fmt.Println(myCar)
+
+	var otherCar car
+	otherCar.brand = "Nissan"
+	otherCar.year = 2012
+	fmt.Println(otherCar)
 }
 
 func llaveValor() {
