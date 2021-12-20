@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
@@ -15,6 +18,7 @@ func main() {
 	fmt.Println("7: Keywords")
 	fmt.Println("8: Arreglos")
 	fmt.Println("9: Recorrer arreglo")
+	fmt.Println("10: Llave valor")
 	fmt.Print("Opción: ")
 	var n int
 	fmt.Scanln(&n)
@@ -47,8 +51,43 @@ func main() {
 	case 9:
 		//range
 		sliceRange()
+	case 10:
+		llaveValor()
 	}
 
+}
+
+func llaveValor() {
+	m := make(map[string]int)
+
+	m["Arianna"] = 10
+	m["Danna"] = 9
+
+	fmt.Println(m)
+
+	// recorrer mapa
+	for i, v := range m {
+		fmt.Println(i, v)
+	}
+
+	//Encontrar valor en mapa
+	valor, ok := m["Arianna"]
+	fmt.Println(valor, ok)
+}
+
+func isPalindromo(texto string) {
+	var textoReverso string
+	texto = strings.ToLower(texto)
+
+	for i := len(texto) - 1; i >= 0; i-- {
+		textoReverso += string(texto[i])
+	}
+
+	if texto == textoReverso {
+		fmt.Println("Es palindromo.")
+	} else {
+		fmt.Println("No es palindromo.")
+	}
 }
 
 func sliceRange() {
@@ -57,6 +96,8 @@ func sliceRange() {
 	for i, valor := range slice {
 		fmt.Println(i, valor)
 	}
+
+	isPalindromo("AmA")
 }
 
 func arreglos() {
